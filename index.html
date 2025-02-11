@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Product Design & Management | Founding Cohort 2025</title>
+
+    <!-- Critical Image Preloading -->
+    <link rel="preload" as="image" href="assets/hero/hero1.jpg">
+    <link rel="preload" as="image" href="assets/hero/hero2.JPG">
+    <link rel="preload" as="image" href="assets/hero/hero3.jpeg">
+    <link rel="preload" as="image" href="assets/hero/hero4.JPG">
+    <link rel="preload" as="image" href="https://www.iiitb.ac.in/includefiles/settings/iiitb_logo.png">
+    
+    <!-- Premium Font Loading -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap">
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="assets/profiles/rahulraj.png" as="image">
+    <link rel="preload" href="assets/projects/project1.jpg" as="image">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Add this right after the opening body tag -->
+    <div class="download-feedback" id="downloadFeedback">
+        <div class="download-content">
+            <div class="download-icon">
+                <i class="fas fa-cloud-download-alt"></i>
+            </div>
+            <div class="download-status">
+                <h3>Downloading Brochures</h3>
+                <div class="download-progress">
+                    <div class="progress-bar"></div>
+                </div>
+                <p class="status-text">Preparing your files...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="https://www.iiitb.ac.in/includefiles/settings/iiitb_logo.png" alt="IIITB Logo" class="logo">
+            <div class="divider"></div>
+            <span>DPDM</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#batch">Batch'25</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact" class="recruit-link">Recruit Us <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="menu-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#batch">Batch Profile</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Recruit Us</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="particles"></div>
+        </div>
+        <div class="hero-wrapper">
+            <div class="hero-content" data-aos="fade-right">
+                <h1 class="glitch" data-text="Digital Product Design">Digital Product Design and Management</h1>
+                <h2 class="typewriter">Post Graduate Program 2024-25</h2>
+                <p class="hero-subtitle">The Next Gen of Digital Product Leaders</p>
+                <div class="hero-buttons">
+                    <a href="#batch" class="hero-btn primary">
+                        <i class="fas fa-users"></i>
+                        Meet Our Batch
+                    </a>
+                    <a href="#" onclick="downloadBrochures(event)" class="hero-btn secondary">
+                        <i class="fas fa-download"></i>
+                        Download Brochure
+                    </a>
+                </div>
+            </div>
+            <div class="hero-carousel" data-aos="fade-left">
+                <div class="swiper-container hero-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="hero-slide">
+                                <img src="assets/hero/hero2.JPG" alt="UX Design">
+                                <div class="slide-content">
+                                    <h3>The Batch</h3>
+                                    <p>PGP-DPDM 2024-25' Batch</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="hero-slide">
+                                <img src="assets/hero/hero3.jpeg" alt="Product Strategy">
+                                <div class="slide-content">
+                                    <h3>Panel Discussion</h3>
+                                    <p>FutureReady Panel Discussions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="hero-slide">
+                                <img src="assets/hero/hero1.jpg" alt="User Research">
+                                <div class="slide-content">
+                                    <h3>Achievements</h3>
+                                    <p>PGP Students swept all the prizes in E-cell conducted competition</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="hero-slide">
+                                <img src="assets/hero/hero4.JPG" alt="User Research">
+                                <div class="slide-content">
+                                    <h3>The Campus</h3>
+                                    <p>The Vibrant IIITB Campus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <!-- Scroll Down Icon -->
+            <div class="scroll-down-icon">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <h2 class="section-title" data-aos="fade-up">About Our Program</h2>
+            
+            <!-- Brief Description -->
+            <div class="about-intro" data-aos="fade-up">
+                <p class="highlight">Enabling Product Innovations for Real-World Impact</p>
+                <p class="description">PGP In Digital Product Design & Management program is crafted to nurture the next generation of product leaders. Through a blend of theoretical knowledge and hands-on experience, we empower students to tackle real-world challenges in the digital product space.</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid" data-aos="fade-up">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="30">0</div>
+                    <p>Enthusiastic Students</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="50">0</div>
+                    <p>Projects</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="10">0</div>
+                    <p>Experienced Faculty</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="14">0</div>
+                    <p>Industry Relevant Courses</p>
+                </div>
+            </div>
+
+            <!-- Curriculum Highlights -->
+            <div class="curriculum-section" data-aos="fade-up">
+                <h3>Curriculum Highlights</h3>
+                <div class="curriculum-grid">
+                    <div class="curriculum-card">
+                        <div class="icon"><i class="fas fa-bezier-curve"></i></div>
+                        <h4>UX Design</h4>
+                        <p>Master the art of creating intuitive and impactful user experiences</p>
+                    </div>
+                    <div class="curriculum-card">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Product Strategy</h4>
+                        <p>Learn to develop and execute successful product strategies</p>
+                    </div>
+                    <div class="curriculum-card">
+                        <div class="icon"><i class="fas fa-users"></i></div>
+                        <h4>User Research</h4>
+                        <p>Understand user needs through advanced research methodologies</p>
+                    </div>
+                    <div class="curriculum-card">
+                        <div class="icon"><i class="fas fa-tasks"></i></div>
+                        <h4>Product Management</h4>
+                        <p>Develop skills to lead product teams and drive innovation</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Director's Message -->
+            <div class="director-message" data-aos="fade-up">
+                <div class="message-content">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <blockquote>
+                        "The PGP-DPDM programme addresses the evolving demands of the digital economy with a carefully designed interdisciplinary curriculum. It integrates the latest advancements in data analysis, user experience, and product management while fostering a deep understanding of social impact and inclusivity. This unique approach encourages students to tackle challenges from multiple perspectives, preparing them for leadership roles in the dynamic digital landscape."
+                    </blockquote>
+                    <div class="director-info">
+                        <div class="director-image">
+                            <img src="assets/profiles/DIRECTOR.png" alt="Program Director">
+                        </div>
+                        <div class="director-details">
+                            <h4>Dr. Debabrata Das</h4>
+                            <p>Director, IIITB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+        <div class="projects-container" data-aos="fade-up">
+            <div class="swiper-container projects-slider">
+                <div class="swiper-wrapper">
+                    <!-- Project Cards -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="assets/projects/project1.jpg" alt="RazorPay" loading="lazy" 
+                                     onerror="this.src='https://via.placeholder.com/400x400/2A2A5C/ffffff?text=E';">
+                                <div class="project-overlay">
+                                    <div class="project-details">
+                                        <h3>RazorPay: Case Study</h3>
+                                        <p>Various Analysis and Problem-solving strategies for Razorpay's current problems</p>
+                                        <a href="https://www.behance.net/gallery/217261955/Razorpay-A-Case-Study" class="project-link">View Case Study</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="assets/projects/project2.jpeg" alt="Zepto">
+                                <div class="project-overlay">
+                                    <div class="project-details">
+                                        <h3>Zepto: The Opportunity </h3>
+                                        <p>Detailed analysis on Zepto's expansion strategies and more</p>
+                                        <a href="https://www.behance.net/gallery/217572151/A-Case-Study-on-Zepto" class="project-link">View Case Study</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="assets/projects/project3.jpeg" alt="blinkit">
+                                <div class="project-overlay">
+                                    <div class="project-details">
+                                        <h3>Blinkit: When minutes can make a difference</h3>
+                                        <p>Detailed analysis on blinkit's market approach and expantion and more</p>
+                                        <a href="https://www.behance.net/gallery/216701717/Blinkit-the-10-Minute-Ambulance" class="project-link">View Case Study</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="assets/projects/project1.jpg" alt="RazorPay" loading="lazy" 
+                                     onerror="this.src='https://via.placeholder.com/400x400/2A2A5C/ffffff?text=E';">
+                                <div class="project-overlay">
+                                    <div class="project-details">
+                                        <h3>RazorPay: Case Study</h3>
+                                        <p>Various Analysis and Problem-solving strategies for Razorpay's current problems</p>
+                                        <a href="https://www.behance.net/gallery/217261955/Razorpay-A-Case-Study" class="project-link">View Case Study</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="assets/projects/project2.jpeg" alt="Zepto">
+                                <div class="project-overlay">
+                                    <div class="project-details">
+                                        <h3>Zepto: The Opportunity </h3>
+                                        <p>Detailed analysis on Zepto's expansion strategies and more</p>
+                                        <a href="https://www.behance.net/gallery/217572151/A-Case-Study-on-Zepto" class="project-link">View Case Study</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="assets/projects/project3.jpeg" alt="blinkit">
+                                <div class="project-overlay">
+                                    <div class="project-details">
+                                        <h3>Blinkit: When minutes can make a difference</h3>
+                                        <p>Detailed analysis on blinkit's market approach and expantion and more</p>
+                                        <a href="https://www.behance.net/gallery/216701717/Blinkit-the-10-Minute-Ambulance" class="project-link">View Case Study</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recruiters Section -->
+    <section class="recruiters">
+        <h2 class="section-title" data-aos="fade-up">Companies That Trust IIITB's Talent</h2>
+        <div class="recruiters-container">
+            <div class="marquee-wrapper">
+                <div class="marquee">
+                    <!-- First group -->
+                    <div class="marquee-group">
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/intuit.jpg" alt="Intuit">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/microsoft.jpg" alt="Microsoft">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/netapp.jpg" alt="Netapp">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/amazon.jpg" alt="Amazon">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/cisco.jpg" alt="Cisco">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/ibm.jpg" alt="IBM">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/infosys.jpg" alt="Infosys">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/hsbc.jpg" alt="HSBC">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/sap.jpg" alt="SAP">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/samsung.jpg" alt="SAMSUNG">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/anz.jpg" alt="ANZ">
+                        </div>
+                    </div>
+                    <!-- Second group (duplicate) -->
+                    <div class="marquee-group">
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/intuit.jpg" alt="Intuit">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/microsoft.jpg" alt="Microsoft">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/netapp.jpg" alt="Netapp">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/amazon.jpg" alt="Amazon">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/cisco.jpg" alt="Cisco">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/ibm.jpg" alt="IBM">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/infosys.jpg" alt="Infosys">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/hsbc.jpg" alt="HSBC">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/sap.jpg" alt="SAP">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/samsung.jpg" alt="SAMSUNG">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/anz.jpg" alt="ANZ">
+                        </div>
+                    </div>
+                    <!-- Third group (duplicate) -->
+                    <div class="marquee-group">
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/intuit.jpg" alt="Intuit">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/microsoft.jpg" alt="Microsoft">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/netapp.jpg" alt="Netapp">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/amazon.jpg" alt="Amazon">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/cisco.jpg" alt="Cisco">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/ibm.jpg" alt="IBM">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/infosys.jpg" alt="Infosys">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/hsbc.jpg" alt="HSBC">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/sap.jpg" alt="SAP">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/samsung.jpg" alt="SAMSUNG">
+                        </div>
+                        <div class="recruiter-logo">
+                            <img src="assets/recruiters/anz.jpg" alt="ANZ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Batch Profile Section -->
+    <section id="batch" class="batch-profiles">
+        <h2 class="section-title" data-aos="fade-up">Meet Our Batch</h2>
+        
+        <!-- Batch Statistics -->
+        <div class="batch-statistics" data-aos="fade-up">
+            <div class="stat-cards-container">
+                <!-- Gender Distribution -->
+                <div class="stat-card">
+                    <h3>Gender Percentage</h3>
+                    <div class="stat-content">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-details">
+                            <p class="total">Total Students: 30</p>
+                            <div class="gender-split">
+                                <div class="gender-item">
+                                    <i class="fas fa-male"></i>
+                                    <p>Male Students: 60% (18)</p>
+                                </div>
+                                <div class="gender-item">
+                                    <i class="fas fa-female"></i>
+                                    <p>Female Students: 40% (12)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Faculty to Student Ratio -->
+                <div class="stat-card">
+                    <h3>Faculty to Student Ratio</h3>
+                    <div class="stat-content">
+                        <div class="stat-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="stat-details">
+                            <div class="ratio-details">
+                                <div class="ratio-item">
+                                    <i class="fas fa-user-tie"></i>
+                                    <p>Faculties: 10</p>
+                                </div>
+                                <div class="ratio-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <p>Students: 30</p>
+                                </div>
+                            </div>
+                            <p class="ratio">Ratio 1:3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bachelor's Discipline -->
+                <div class="stat-card">
+                    <h3>Bachelors' Discipline</h3>
+                    <div class="stat-content">
+                        <div class="discipline-table">
+                            <div class="discipline-row">
+                                <span class="discipline">Engineering</span>
+                                <span class="count">12</span>
+                            </div>
+                            <div class="discipline-row">
+                                <span class="discipline">Science</span>
+                                <span class="count">5</span>
+                            </div>
+                            <div class="discipline-row">
+                                <span class="discipline">Arts & Humanities</span>
+                                <span class="count">4</span>
+                            </div>
+                            <div class="discipline-row">
+                                <span class="discipline">Commerce</span>
+                                <span class="count">3</span>
+                            </div>
+                            <div class="discipline-row">
+                                <span class="discipline">Others</span>
+                                <span class="count">6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Experience Profile -->
+                <div class="stat-card">
+                    <h3>Work Experience Profile</h3>
+                    <div class="stat-content">
+                        <div class="experience-table">
+                            <div class="experience-row">
+                                <span class="duration">Freshers</span>
+                                <span class="count">10</span>
+                            </div>
+                            <div class="experience-row">
+                                <span class="duration">1-12 months</span>
+                                <span class="count">8</span>
+                            </div>
+                            <div class="experience-row">
+                                <span class="duration">13-24 months</span>
+                                <span class="count">3</span>
+                            </div>
+                            <div class="experience-row">
+                                <span class="duration">25-36 months</span>
+                                <span class="count">6</span>
+                            </div>
+                            <div class="experience-row">
+                                <span class="duration">37-48 months</span>
+                                <span class="count">3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filters" data-aos="fade-up">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search" placeholder="Search by name or skills">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ux">UX Design</button>
+                <button class="filter-btn" data-filter="product">Product</button>
+                <button class="filter-btn" data-filter="research">Research</button>
+            </div>
+        </div>
+        <div class="profiles-grid" id="profilesGrid">
+            <!-- Profile cards will be added via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2 class="section-title" data-aos="fade-up">Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-stream">
+                <!-- Gallery items will be added via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2 class="section-title" data-aos="fade-up">Recruit Us</h2>
+            
+            <!-- New Recruit Layout -->
+            <div class="recruit-content" data-aos="fade-up">
+                <p class="recruit-subtitle">Join hands with the best talent from our batch</p>
+                
+                <a href="recruit.html" class="recruit-btn">
+                    Click to Recruit
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <div class="recruit-info">
+                    <div class="recruit-item">
+                        <div class="recruit-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="recruit-details">
+                            <h3>Email Us</h3>
+                            <p>placements.pgp@iiitb.ac.in</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recruit-item">
+                        <div class="recruit-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="recruit-details">
+                            <h3>Call Us</h3>
+                            <p>080 4140 7777</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preserve existing contact form but keep it hidden -->
+            <div class="contact-content" style="display: none;">
+                <form class="contact-form" data-aos="fade-left">
+                    <div class="form-group">
+                        <input type="text" required>
+                        <label>Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" required>
+                        <label>Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea required></textarea>
+                        <label>Your Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>DPDM</h3>
+                <p>Shaping the future of digital products</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/showcase/iiit-bangalore-pg-programme-in-digital-product-design-and-management-pgpdpdm/posts/?feedView=all"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/mandes_iiitb?igsh=Znl6czVhZTA1ZGlm"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                </div>
+                <div class="link-column">
+                    <h4>Resources</h4>
+                    <a href="#batch">Batch Profile</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Digital Product Design & Management. All rights reserved. Designed and developed by Chandrakiran HJ</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+    function downloadBrochures(event) {
+        event.preventDefault();
+        
+        const feedback = document.getElementById('downloadFeedback');
+        const progressBar = feedback.querySelector('.progress-bar');
+        const statusText = feedback.querySelector('.status-text');
+        
+        // Show feedback
+        feedback.classList.add('active');
+        
+        // Files to download
+        const files = [
+            {
+                url: 'https://drive.google.com/uc?export=download&id=1g5OgUqqJXtyZbMsUhv7zh3q4yfrrHe4O',
+                filename: 'IIITB_DPDM_BATCH_PROFILE.pdf'
+            },
+            {
+                url: 'https://drive.google.com/uc?export=download&id=1cfCnQDlpVLWPibSbrdhoXJBjCMpOzO-y',
+                filename: 'IIITB_DPDM_Placement_Brochure_2025.pdf'
+            }
+        ];
+
+        // Progress simulation
+        let progress = 0;
+        const progressInterval = setInterval(() => {
+            progress += 5;
+            progressBar.style.width = `${progress}%`;
+            
+            if (progress < 30) {
+                statusText.textContent = 'Preparing your files...';
+            } else if (progress < 60) {
+                statusText.textContent = 'Downloading Batch Profile...';
+            } else if (progress < 90) {
+                statusText.textContent = 'Downloading Placement Brochure...';
+            } else {
+                statusText.textContent = 'Completing downloads...';
+            }
+            
+            if (progress >= 100) {
+                clearInterval(progressInterval);
+                statusText.textContent = 'Downloads completed!';
+                
+                // Hide feedback after completion
+                setTimeout(() => {
+                    feedback.classList.remove('active');
+                    progressBar.style.width = '0%';
+                }, 1000);
+            }
+        }, 100);
+
+        // Download files
+        files.forEach((file, index) => {
+            setTimeout(() => {
+                const link = document.createElement('a');
+                link.href = file.url;
+                link.target = '_blank';
+                link.download = file.filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }, index * 1000); // Delay between downloads
+        });
+    }
+    </script>
+
+    <!-- Add this before the closing body tag -->
+    <style>
+    .download-feedback {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        background: rgba(255, 255, 255, 0.98);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(191, 161, 129, 0.1);
+        min-width: 320px;
+    }
+
+    .download-feedback.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .download-content {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .download-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #BFA181 0%, #8B6B43 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .download-icon i {
+        font-size: 1.8rem;
+        color: white;
+        animation: bounce 1s infinite;
+    }
+
+    .download-status {
+        flex: 1;
+    }
+
+    .download-status h3 {
+        font-family: 'Playfair Display', serif;
+        color: var(--primary-color);
+        margin-bottom: 0.8rem;
+        font-size: 1.2rem;
+    }
+
+    .download-progress {
+        height: 4px;
+        background: rgba(191, 161, 129, 0.1);
+        border-radius: 2px;
+        margin: 0.8rem 0;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #BFA181 0%, #8B6B43 100%);
+        width: 0%;
+        transition: width 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .progress-bar::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: shimmer 1.5s infinite;
+    }
+
+    .status-text {
+        color: #666;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+    </style>
+</body>
+</html>
