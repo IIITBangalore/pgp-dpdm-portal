@@ -1988,6 +1988,7 @@ blockquote {
     padding: 6rem 0;
     background: linear-gradient(to right, rgba(255,255,255,0.97), rgba(248,249,250,0.97), rgba(255,255,255,0.97));
     position: relative;
+    overflow: hidden;
 }
 
 .recruiters-container {
@@ -1997,24 +1998,10 @@ blockquote {
     position: relative;
 }
 
+/* Remove the problematic gradient overlays */
 .recruiters-container::before,
 .recruiters-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 200px;
-    height: 100%;
-    z-index: 2;
-}
-
-.recruiters-container::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
-}
-
-.recruiters-container::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+    display: none; /* Remove the gradient overlays completely */
 }
 
 .marquee-wrapper {
@@ -2022,11 +2009,12 @@ blockquote {
     width: 100%;
     overflow: hidden;
     position: relative;
+    padding: 1rem 0;
 }
 
 .marquee {
     display: flex;
-    animation: scroll 40s linear infinite;
+    animation: scroll 30s linear infinite;
     gap: 2rem;
     width: max-content;
 }
@@ -2035,7 +2023,7 @@ blockquote {
     display: flex;
     align-items: center;
     gap: 2rem;
-    padding: 1rem 0;
+    padding: 0;
     flex-shrink: 0;
     min-width: max-content;
 }
@@ -2056,6 +2044,7 @@ blockquote {
     opacity: 0.7;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(191, 161, 129, 0.1);
 }
 
 .recruiter-logo:hover {
@@ -2063,6 +2052,7 @@ blockquote {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
     filter: grayscale(0%);
     opacity: 1;
+    border-color: rgba(191, 161, 129, 0.3);
 }
 
 .recruiter-logo img {
@@ -2070,6 +2060,7 @@ blockquote {
     max-height: 100%;
     object-fit: contain;
     transition: transform 0.4s ease;
+    will-change: transform;
 }
 
 .recruiter-logo:hover img {
@@ -2077,12 +2068,16 @@ blockquote {
 }
 
 @keyframes scroll {
-    from {
+    0% {
         transform: translateX(0);
     }
-    to {
+    100% {
         transform: translateX(calc(-50%));
     }
+}
+
+.marquee:hover {
+    animation-play-state: paused;
 }
 
 @media (max-width: 768px) {
@@ -2101,7 +2096,23 @@ blockquote {
     }
 
     .marquee {
-        animation: scroll 30s linear infinite;
+        animation: scroll 25s linear infinite;
+    }
+}
+
+@media (max-width: 480px) {
+    .recruiter-logo {
+        width: 120px;
+        height: 60px;
+        padding: 0.8rem;
+    }
+
+    .marquee-group {
+        gap: 1rem;
+    }
+
+    .marquee {
+        animation: scroll 20s linear infinite;
     }
 }
 

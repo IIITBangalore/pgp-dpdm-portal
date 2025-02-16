@@ -438,39 +438,52 @@ const recruiters = [
 
 // Initialize Recruiters Carousel
 function initializeRecruiters() {
+    const marqueeWrapper = document.querySelector('.marquee-wrapper');
+    const marquee = document.querySelector('.marquee');
     const marqueeGroup = document.querySelector('.marquee-group');
-    if (!marqueeGroup) {
-        console.error('Marquee group not found');
+    
+    if (!marqueeWrapper || !marquee || !marqueeGroup) {
+        console.error('Required recruiter elements not found');
         return;
     }
 
     // Clear existing content
     marqueeGroup.innerHTML = '';
-
-    // Debug: Log the number of recruiters being added
-    console.log(`Adding ${recruiters.length} recruiter logos`);
+    console.log('Initializing recruiters section with', recruiters.length, 'logos');
 
     // Create recruiter logos
     recruiters.forEach((recruiter, index) => {
         const logo = document.createElement('div');
         logo.className = 'recruiter-logo';
-        logo.innerHTML = `<img src="${recruiter.logo}" alt="${recruiter.name} logo" 
-                              onerror="console.error('Failed to load recruiter logo:', '${recruiter.logo}')"
-                              onload="console.log('Successfully loaded recruiter logo:', '${recruiter.logo}')">`;
+        logo.innerHTML = `
+            <img src="${recruiter.logo}" 
+                 alt="${recruiter.name} logo" 
+                 loading="lazy"
+                 onerror="this.onerror=null; console.error('Failed to load logo:', '${recruiter.logo}'); this.src='https://via.placeholder.com/180x90/2A2A5C/ffffff?text=${encodeURIComponent(recruiter.name)}'"
+                 onload="console.log('Successfully loaded logo:', '${recruiter.logo}')"
+            >
+        `;
         marqueeGroup.appendChild(logo);
         console.log(`Added recruiter ${index + 1}/${recruiters.length}: ${recruiter.name}`);
     });
 
     // Clone the marquee group for seamless scrolling
     const clone = marqueeGroup.cloneNode(true);
-    document.querySelector('.marquee').appendChild(clone);
+    marquee.appendChild(clone);
     console.log('Marquee group cloned for seamless scrolling');
+
+    // Add hover pause functionality
+    marqueeWrapper.addEventListener('mouseenter', () => {
+        marquee.style.animationPlayState = 'paused';
+    });
+    
+    marqueeWrapper.addEventListener('mouseleave', () => {
+        marquee.style.animationPlayState = 'running';
+    });
 }
 
 // Call the initialization when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    initializeRecruiters();
-});
+document.addEventListener('DOMContentLoaded', initializeRecruiters);
 
 // Batch Profiles Data
 const batchProfiles = [
