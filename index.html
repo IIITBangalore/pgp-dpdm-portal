@@ -239,16 +239,16 @@
         <div class="projects-container" data-aos="fade-up">
             <div class="swiper-container projects-slider">
                 <div class="swiper-wrapper">
-                    <!-- Project Cards -->
                     <div class="swiper-slide">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="assets/projects/project1.jpg" alt="RazorPay" loading="lazy" 
-                                     onerror="this.src='https://via.placeholder.com/400x400/2A2A5C/ffffff?text=E';">
+                                <img src="assets/projects/project1.jpg" alt="RazorPay" 
+                                     onerror="this.onerror=null; console.error('Failed to load project image: ' + this.src);"
+                                     onload="console.log('Successfully loaded project image: ' + this.src)">
                                 <div class="project-overlay">
                                     <div class="project-details">
-                                        <h3>RazorPay: Case Study</h3>
-                                        <p>Various Analysis and Problem-solving strategies for Razorpay's current problems</p>
+                                        <h3>RazorPay Case Study</h3>
+                                        <p>A comprehensive analysis of RazorPay's payment solutions</p>
                                         <a href="https://www.behance.net/gallery/217261955/Razorpay-A-Case-Study" class="project-link">View Case Study</a>
                                     </div>
                                 </div>
@@ -258,11 +258,13 @@
                     <div class="swiper-slide">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="assets/projects/project2.jpeg" alt="Zepto">
+                                <img src="assets/projects/project2.jpeg" alt="Zepto"
+                                     onerror="this.onerror=null; console.error('Failed to load project image: ' + this.src);"
+                                     onload="console.log('Successfully loaded project image: ' + this.src)">
                                 <div class="project-overlay">
                                     <div class="project-details">
-                                        <h3>Zepto: The Opportunity </h3>
-                                        <p>Detailed analysis on Zepto's expansion strategies and more</p>
+                                        <h3>Zepto Case Study</h3>
+                                        <p>Quick commerce revolution: A deep dive into Zepto's success</p>
                                         <a href="https://www.behance.net/gallery/217572151/A-Case-Study-on-Zepto" class="project-link">View Case Study</a>
                                     </div>
                                 </div>
@@ -272,54 +274,13 @@
                     <div class="swiper-slide">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="assets/projects/project3.jpeg" alt="blinkit">
+                                <img src="assets/projects/project3.jpeg" alt="Blinkit"
+                                     onerror="this.onerror=null; console.error('Failed to load project image: ' + this.src);"
+                                     onload="console.log('Successfully loaded project image: ' + this.src)">
                                 <div class="project-overlay">
                                     <div class="project-details">
-                                        <h3>Blinkit: When minutes can make a difference</h3>
-                                        <p>Detailed analysis on blinkit's market approach and expantion and more</p>
-                                        <a href="https://www.behance.net/gallery/216701717/Blinkit-the-10-Minute-Ambulance" class="project-link">View Case Study</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="assets/projects/project1.jpg" alt="RazorPay" loading="lazy" 
-                                     onerror="this.src='https://via.placeholder.com/400x400/2A2A5C/ffffff?text=E';">
-                                <div class="project-overlay">
-                                    <div class="project-details">
-                                        <h3>RazorPay: Case Study</h3>
-                                        <p>Various Analysis and Problem-solving strategies for Razorpay's current problems</p>
-                                        <a href="https://www.behance.net/gallery/217261955/Razorpay-A-Case-Study" class="project-link">View Case Study</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="assets/projects/project2.jpeg" alt="Zepto">
-                                <div class="project-overlay">
-                                    <div class="project-details">
-                                        <h3>Zepto: The Opportunity </h3>
-                                        <p>Detailed analysis on Zepto's expansion strategies and more</p>
-                                        <a href="https://www.behance.net/gallery/217572151/A-Case-Study-on-Zepto" class="project-link">View Case Study</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="assets/projects/project3.jpeg" alt="blinkit">
-                                <div class="project-overlay">
-                                    <div class="project-details">
-                                        <h3>Blinkit: When minutes can make a difference</h3>
-                                        <p>Detailed analysis on blinkit's market approach and expantion and more</p>
+                                        <h3>Blinkit Case Study</h3>
+                                        <p>10-Minute Ambulance: Revolutionizing emergency response</p>
                                         <a href="https://www.behance.net/gallery/216701717/Blinkit-the-10-Minute-Ambulance" class="project-link">View Case Study</a>
                                     </div>
                                 </div>

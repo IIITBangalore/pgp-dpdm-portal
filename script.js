@@ -55,16 +55,24 @@ function loadRemainingImages() {
         ],
         gallery: ['gallery1.jpg', 'gallery2.jpeg', 'gallery3.jpeg', 'gallery4.jpg', 
                  'gallery5.jpg', 'gallery6.jpg', 'gallery7.jpg'],
-        recruiters: ['intuit.jpg', 'microsoft.jpg', 'netapp.jpg', 'amazon.jpg', 
-                    'cisco.jpg', 'ibm.jpg', 'infosys.jpg', 'hsbc.jpg', 
-                    'sap.jpg', 'samsung.jpg', 'anz.jpg'],
-        projects: ['project1.jpg']
+        recruiters: ['INTUIT.jpg', 'MICROSOFT.jpg', 'NETAPP.jpg', 'AMAZON.jpg', 
+                    'CISCO.jpg', 'IBM.jpg', 'INFOSYS.jpg', 'HSBC.jpg', 
+                    'SAP.jpg', 'SAMSUNG.jpg', 'ANZ.jpg'],
+        projects: ['project1.jpg', 'project2.jpeg', 'project3.jpeg']
     };
 
     // Load remaining images in chunks to prevent overwhelming the browser
     const chunkSize = 5;
     const remainingImages = [
-        ...assetDirectories.profiles.map(img => `assets/profiles/${img}`),
+        ...assetDirectories.profiles.map(img => {
+            const path = `assets/profiles/${img}`;
+            // Preload each image and log its status
+            const preloadImg = new Image();
+            preloadImg.onload = () => console.log(`Successfully preloaded: ${path}`);
+            preloadImg.onerror = () => console.error(`Failed to preload: ${path}`);
+            preloadImg.src = path;
+            return path;
+        }),
         ...assetDirectories.gallery.map(img => `assets/gallery/${img}`),
         ...assetDirectories.recruiters.map(img => `assets/recruiters/${img}`),
         ...assetDirectories.projects.map(img => `assets/projects/${img}`)
@@ -754,19 +762,78 @@ const batchProfiles = [
 // Initialize Batch Profiles
 function initializeBatchProfiles() {
     const profilesGrid = document.querySelector('.profiles-grid');
-    if (!profilesGrid) return;
+    if (!profilesGrid) {
+        console.error('Profiles grid not found');
+        return;
+    }
+
+    // Debug: Log environment info
+    console.log('=== Environment Information ===');
+    console.log('Base URL:', window.location.origin);
+    console.log('Current Path:', window.location.pathname);
+    console.log('Full URL:', window.location.href);
+
+    // Debug: Check if assets directory exists
+    fetch('assets/profiles/')
+        .then(response => {
+            console.log('Assets directory check:', response.status, response.statusText);
+        })
+        .catch(error => {
+            console.error('Assets directory check failed:', error);
+        });
+
+    console.log('=== Profile Image Paths ===');
+    batchProfiles.forEach(profile => {
+        // Test image loading
+        const img = new Image();
+        const absoluteURL = new URL(profile.image, window.location.href).href;
+        
+        img.onload = () => {
+            console.log(`✅ Image loaded successfully: ${profile.image}`);
+            console.log(`   Absolute URL: ${absoluteURL}`);
+            console.log(`   Dimensions: ${img.width}x${img.height}`);
+        };
+        
+        img.onerror = () => {
+            console.error(`❌ Image failed to load: ${profile.image}`);
+            console.error(`   Absolute URL: ${absoluteURL}`);
+            console.error(`   Attempted paths:`);
+            console.error(`   - Relative to root: /${profile.image}`);
+            console.error(`   - Relative to current: ${profile.image}`);
+            console.error(`   - Absolute: ${absoluteURL}`);
+        };
+        
+        img.src = profile.image;
+    });
 
     profilesGrid.innerHTML = batchProfiles.map((profile, index) => {
-        // Convert domain to array if it's a string
         const domains = Array.isArray(profile.domain) ? profile.domain : [profile.domain];
+        
+        // Create absolute URL for image
+        const imageURL = new URL(profile.image, window.location.href).href;
+        console.log(`Rendering profile for ${profile.name}`);
+        console.log(`- Image path: ${profile.image}`);
+        console.log(`- Absolute URL: ${imageURL}`);
         
         return `
         <div class="profile-card" data-aos="fade-up" data-aos-delay="${index * 100}" 
              data-domains="${domains.join(' ')}"
-             data-skills="${profile.domains.map(d => d.toLowerCase().replace(/[^a-z]/g, '')).join(' ')}">
+             data-skills="${profile.domains.map(d => d.toLowerCase().replace(/[^a-z]/g, '')).join(' ')}"
+             data-image-path="${profile.image}"
+             data-absolute-url="${imageURL}">
             <div class="profile-image">
-                <img src="${profile.image}" alt="${profile.name}" 
-                     onerror="this.src='https://via.placeholder.com/400x400/2A2A5C/ffffff?text=${encodeURIComponent(profile.name[0])}'">
+                <img src="${profile.image}" 
+                     alt="${profile.name}" 
+                     onerror="(function(img) {
+                         console.error('Image load error:', {
+                             src: img.src,
+                             absoluteURL: img.closest('.profile-card').dataset.absoluteUrl,
+                             relativePath: img.closest('.profile-card').dataset.imagePath
+                         });
+                         img.onerror=null;
+                         img.src='https://via.placeholder.com/400x400/2A2A5C/ffffff?text=${encodeURIComponent(profile.name[0])}';
+                     })(this)"
+                     onload="console.log('✅ Profile image loaded:', this.src)">
                 <div class="profile-overlay">
                     <div class="profile-description">
                         <p>${profile.description}</p>
@@ -785,9 +852,33 @@ function initializeBatchProfiles() {
             </div>
         </div>
     `}).join('');
+
+    // Add a test image after initialization
+    const testImage = new Image();
+    testImage.onload = () => {
+        console.log('✅ Test image loaded successfully');
+    };
+    testImage.onerror = () => {
+        console.error('❌ Test image failed to load');
+        // Try alternative paths
+        console.log('Trying alternative paths...');
+        [
+            '/assets/profiles/abhigyanrai.jpg',
+            './assets/profiles/abhigyanrai.jpg',
+            '../assets/profiles/abhigyanrai.jpg',
+            'assets/profiles/abhigyanrai.jpg'
+        ].forEach(path => {
+            const img = new Image();
+            img.onload = () => console.log(`✅ Success with path: ${path}`);
+            img.onerror = () => console.log(`❌ Failed with path: ${path}`);
+            img.src = path;
+        });
+    };
+    testImage.src = 'assets/profiles/abhigyanrai.jpg';
         
     // Initialize filters after cards are generated
     initializeProfileFilters();
+    console.log('Batch profiles initialization completed');
 }
 
 // Initialize Profile Filters
@@ -836,8 +927,19 @@ function initializeProfileFilters() {
     });
 }
 
-// Initialize batch profiles on DOM content loaded
-document.addEventListener('DOMContentLoaded', initializeBatchProfiles);
+// Add event listener for DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('=== Page Load Information ===');
+    console.log('Document readyState:', document.readyState);
+    console.log('Location:', window.location.href);
+    console.log('Starting profile initialization...');
+    
+    // Check if critical elements exist
+    const profilesGrid = document.querySelector('.profiles-grid');
+    console.log('Profiles grid found:', !!profilesGrid);
+    
+    initializeBatchProfiles();
+});
 
 // Initialize Hero Carousel
 const heroSlider = new Swiper('.hero-slider', {
