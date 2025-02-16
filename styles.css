@@ -2021,12 +2021,14 @@ blockquote {
     display: flex;
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .marquee {
     display: flex;
     animation: scroll 40s linear infinite;
     gap: 2rem;
+    width: max-content;
 }
 
 .marquee-group {
@@ -2035,6 +2037,7 @@ blockquote {
     gap: 2rem;
     padding: 1rem 0;
     flex-shrink: 0;
+    min-width: max-content;
 }
 
 .recruiter-logo {
@@ -2051,6 +2054,8 @@ blockquote {
     flex-shrink: 0;
     filter: grayscale(100%);
     opacity: 0.7;
+    position: relative;
+    overflow: hidden;
 }
 
 .recruiter-logo:hover {
@@ -2064,6 +2069,11 @@ blockquote {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.recruiter-logo:hover img {
+    transform: scale(1.1);
 }
 
 @keyframes scroll {
@@ -2071,7 +2081,7 @@ blockquote {
         transform: translateX(0);
     }
     to {
-        transform: translateX(calc(-50% - 1rem));
+        transform: translateX(calc(-50%));
     }
 }
 
@@ -2089,10 +2099,9 @@ blockquote {
     .marquee-group {
         gap: 1.5rem;
     }
-    
-    .recruiters-container::before,
-    .recruiters-container::after {
-        width: 100px;
+
+    .marquee {
+        animation: scroll 30s linear infinite;
     }
 }
 

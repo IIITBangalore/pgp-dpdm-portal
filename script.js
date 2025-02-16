@@ -427,28 +427,44 @@ const recruiters = [
     { name: 'HSBC', logo: 'assets/recruiters/HSBC.jpg' },
     { name: 'SAP', logo: 'assets/recruiters/SAP.jpg' },
     { name: 'Samsung', logo: 'assets/recruiters/SAMSUNG.jpg' },
-    { name: 'ANZ', logo: 'assets/recruiters/ANZ.jpg' }
+    { name: 'ANZ', logo: 'assets/recruiters/ANZ.jpg' },
+    { name: 'Flipkart', logo: 'assets/recruiters/FLIPKART.jpg' },
+    { name: 'Qualcomm', logo: 'assets/recruiters/QUALCOMM.jpg' },
+    { name: 'American Express', logo: 'assets/recruiters/AMERICANEXPRESS.jpg' },
+    { name: 'Bosch', logo: 'assets/recruiters/BOSCH.jpg' },
+    { name: 'Morgan Stanley', logo: 'assets/recruiters/Mongan stanley.jpg' },
+    { name: 'Western Digital', logo: 'assets/recruiters/WD.jpg' }
 ];
 
 // Initialize Recruiters Carousel
 function initializeRecruiters() {
     const marqueeGroup = document.querySelector('.marquee-group');
-    if (!marqueeGroup) return;
+    if (!marqueeGroup) {
+        console.error('Marquee group not found');
+        return;
+    }
 
     // Clear existing content
     marqueeGroup.innerHTML = '';
 
+    // Debug: Log the number of recruiters being added
+    console.log(`Adding ${recruiters.length} recruiter logos`);
+
     // Create recruiter logos
-    recruiters.forEach(recruiter => {
+    recruiters.forEach((recruiter, index) => {
         const logo = document.createElement('div');
         logo.className = 'recruiter-logo';
-        logo.innerHTML = `<img src="${recruiter.logo}" alt="${recruiter.name} logo">`;
+        logo.innerHTML = `<img src="${recruiter.logo}" alt="${recruiter.name} logo" 
+                              onerror="console.error('Failed to load recruiter logo:', '${recruiter.logo}')"
+                              onload="console.log('Successfully loaded recruiter logo:', '${recruiter.logo}')">`;
         marqueeGroup.appendChild(logo);
+        console.log(`Added recruiter ${index + 1}/${recruiters.length}: ${recruiter.name}`);
     });
 
     // Clone the marquee group for seamless scrolling
     const clone = marqueeGroup.cloneNode(true);
     document.querySelector('.marquee').appendChild(clone);
+    console.log('Marquee group cloned for seamless scrolling');
 }
 
 // Call the initialization when DOM is loaded
