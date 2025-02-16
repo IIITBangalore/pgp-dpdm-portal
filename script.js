@@ -3,9 +3,9 @@ function preloadImages() {
     // Define critical images that should load first
     const criticalImages = [
         'assets/hero/hero1.jpg',
-        'assets/hero/hero2.jpg',
-        'assets/hero/hero3.jpg',
-        'assets/hero/hero4.jpg',
+        'assets/hero/hero2.JPG',
+        'assets/hero/hero3.jpeg',
+        'assets/hero/hero4.JPG',
         'https://www.iiitb.ac.in/includefiles/settings/iiitb_logo.png'
     ];
 
@@ -409,17 +409,17 @@ document.addEventListener('DOMContentLoaded', initializeGallery);
 
 // Recruiters Data
 const recruiters = [
-    { name: 'Intuit', logo: 'assets/recruiters/intuit.jpg' },
-    { name: 'Microsoft', logo: 'assets/recruiters/microsoft.jpg' },
-    { name: 'Netapp', logo: 'assets/recruiters/netapp.jpg' },
-    { name: 'Amazon', logo: 'assets/recruiters/amazon.jpg' },
-    { name: 'Cisco', logo: 'assets/recruiters/cisco.jpg' },
-    { name: 'IBM', logo: 'assets/recruiters/ibm.jpg' },
-    { name: 'Infosys', logo: 'assets/recruiters/infosys.jpg' },
-    { name: 'HSBC', logo: 'assets/recruiters/hsbc.jpg' },
-    { name: 'SAP', logo: 'assets/recruiters/sap.jpg' },
-    { name: 'Samsung', logo: 'assets/recruiters/samsung.jpg' },
-    { name: 'ANZ', logo: 'assets/recruiters/anz.jpg' }
+    { name: 'Intuit', logo: 'assets/recruiters/INTUIT.jpg' },
+    { name: 'Microsoft', logo: 'assets/recruiters/MICROSOFT.jpg' },
+    { name: 'Netapp', logo: 'assets/recruiters/NETAPP.jpg' },
+    { name: 'Amazon', logo: 'assets/recruiters/AMAZON.jpg' },
+    { name: 'Cisco', logo: 'assets/recruiters/CISCO.jpg' },
+    { name: 'IBM', logo: 'assets/recruiters/IBM.jpg' },
+    { name: 'Infosys', logo: 'assets/recruiters/INFOSYS.jpg' },
+    { name: 'HSBC', logo: 'assets/recruiters/HSBC.jpg' },
+    { name: 'SAP', logo: 'assets/recruiters/SAP.jpg' },
+    { name: 'Samsung', logo: 'assets/recruiters/SAMSUNG.jpg' },
+    { name: 'ANZ', logo: 'assets/recruiters/ANZ.jpg' }
 ];
 
 // Initialize Recruiters Carousel
