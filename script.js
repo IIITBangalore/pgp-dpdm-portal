@@ -500,7 +500,7 @@ const batchProfiles = [
         name: "Alina Abhish Desai",
         title: "Aspiring Product Designer",
         experience: "Fresher",
-        domain: "ux",
+        domain: ["ux","research"],
         image: "assets/profiles/alinadesai.jpg",
         linkedin: "https://www.linkedin.com/in/alinadesai16/",
         domains: ["Product Design", "User Research", "Design Strategy"],
