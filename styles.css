@@ -358,8 +358,19 @@ section:hover::before {
     height: 50px;
     width: auto;
     margin-right: 1rem;
-    transition: var(--transition-smooth);
-    filter: brightness(0) saturate(100%) invert(77%) sepia(19%) saturate(659%) hue-rotate(345deg) brightness(89%) contrast(84%);
+}
+
+@media (max-width: 768px) {
+    .nav-brand .logo {
+        height: 40px;
+        margin-right: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-brand .logo {
+        height: 35px;
+    }
 }
 
 .nav-brand .logo:hover {
